@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gambling by waresiak.pl</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="colors">
+        <div class="circle black"></div>
+        <div class="circle black"></div>
+        <div class="circle black"></div>
+        <div class="circle red"></div>
+        <div class="circle red"></div>
+        <div class="circle red"></div>
+        <div class="circle red"></div>
+        <div class="circle black"></div>
+        <div class="circle black"></div>
+        <div class="circle black"></div>
+        <div class="circle red"></div>
+        <div class="circle red"></div>
+        <div class="circle red"></div>
+        <div class="circle black"></div>
+        <div class="circle black"></div>
+        <div class="circle green"></div>
+        <div class="circle black"></div>
+        <div class="circle black"></div>
+        <div class="circle red"></div>
+        <div class="circle red"></div>
+        <div class="circle black"></div>
+        <div class="circle red"></div>
+        <div class="circle black"></div>
+        <div class="circle red"></div>
+        <div class="circle black"></div>
+        <div class="circle red"></div>
+        <div class="circle red"></div>
+        <div class="circle red"></div>
+    </div>
+    <div id="content">
+
+        <div id="timer"></div>
+        <div id="progress-bar" >
+            <div id="progress"></div>
+        </div>
+        <p id="bet-status"></p>
+        <div id="money-holder">
+            Money: <p id="money">    
+        </div>
+        </p>
+            <div id="inteface">
+                <div class="betting">
+                    <input type="number" id="red" style="background-color: var(--red);">
+                    <button id="red-button" onclick="bet('red')">Postaw na czerwone!</button>
+                </div>
+                
+
+                <div class="betting">
+                    <input type="number" id="green"style="background-color: var(--green);">
+                    <button onclick="bet('green')" id="green-button">Postaw na zielone!</button>
+                </div>
+
+                <div class="betting">
+                    <input type="number" id="black" style="background-color: var(--black); color: white;">
+                    <button onclick="bet('black')" id="black-button">Postaw na czarne!</button>                
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

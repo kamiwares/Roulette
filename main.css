@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+:root{
+    --darkcolor: #222225;
+    --lightcolor: #38383d;
+    --red: #D4594C;
+    --green: #7DC48A;
+    --black: #1d1d1d;
+    --bordercolor: rgba(0, 0, 0, 0.61);
+    --white: #DADAE1;
+}
+
+@keyframes entrance {
+    form{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+
+#content{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--darkcolor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#inteface{
+    background-color: var(--lightcolor);
+
+}
+
+#progress-bar{
+    width: 50%;
+    height: 40px;
+    background-color: lightcoral;
+    margin-bottom: 15px;
+}
+#progress{
+    background-color: lightgreen;
+    height: 40px;
+    animation-name: progress;
+    width: 33%;
+    transition: 1.2s;
+}
+.betting{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.betting input{
+    padding: 15px;
+    border: 1px solid var(--bordercolor);
+}
+#money-holder{
+    background-color: #38383d;
+    margin-bottom: 15px;
+    padding: 30px;
+    display: flex;
+    color: var(--white);
+    font-size: 32px;
+
+}
+#timer{
+    background-color: var(--lightcolor);
+    padding: 15px;
+    font-size: 64px;
+    min-height: 64px;
+    min-width: 32px;
+    margin: 15px;
+    border-radius: 3px;
+    border: 1px solid var(--bordercolor);
+    color: var(--white)
+}
+#colors{
+    display: flex;
+    position: absolute;
+    bottom: 2%;
+    right: 10%;
+    background-color: var(--lightcolor);
+    padding: 30px;
+    height: 64px;
+    min-width: 64px;
+    border: 1px solid var(--bordercolor);
+    border-radius: 5px;
+
+}
+
+.circle{
+    border: 1px solid var(--bordercolor);
+    margin: 1px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    opacity: 0;
+    animation-name: entrance;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.red{
+    background-color: var(--red);
+    
+}
+.green{
+    background-color: var(--green);
+}
+.black{
+    background-color: var(--black);
+}
+
+.animation-entrace{
+    animation-name: entrance;
+    animation-duration: 1s;
+}
+#bet-status{
+    color: var(--white);
+}
+
+@media only screen and (max-width: 900px) {
+    #inteface {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .betting input{
+        padding: 5px;
+    }
+    #money-holder{
+        padding: 5px;
+    
+    }
+    #timer{
+        padding: 5px;
+    }
+    #colors{
+        padding: 5px;
+    
+    }
+}
