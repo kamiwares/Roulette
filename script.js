@@ -13,37 +13,49 @@ var bettedongreen = 0;
 
 var isbetted = 0;
 
-bet = (color) =>{
 
-    if(isbetted==0){
-        var betonblack = document.getElementById('black').value;
-        var betonred = document.getElementById('red').value;
-        var betongreen = document.getElementById('green').value;
-            if(betonred<money){
-            money = money - betonred;
-            document.getElementById('money').innerHTML = money;
-            bettedonred = betonred*2
-            isbetted++
-            }
-            if(betonblack<money){
-            money = money - betonblack;
-            document.getElementById('money').innerHTML = money;
-            bettedonblack = betonblack*2
-            isbetted++
-            }
-            if(betongreen<money){
-                money = money - betongreen;
-                document.getElementById('money').innerHTML = money;
-                bettedongreen = betongreen*14
-                isbetted++
-            }
-        }
-    
+betRed = () =>{
+    var betonred = document.getElementById('red').value;
+    if(betonred<money){
+        money = money - betonred;
+        document.getElementById('money').innerHTML = money;
+        bettedonred = betonred*2
+        isbetted++
+    }
     else{
         document.getElementById('bet-status').innerHTML = 'Możesz dać beta tylko raz na ture!';
     }
-
 }
+
+
+betBlack = () =>{
+    var betonblack = document.getElementById('black').value;
+    if(betonblack<money){
+        money = money - betonblack;
+        document.getElementById('money').innerHTML = money;
+        bettedonblack = betonblack*2
+        isbetted++
+    }
+    else{
+        document.getElementById('bet-status').innerHTML = 'Możesz dać beta tylko raz na ture!';
+    }
+}
+
+
+betGreen = () =>{
+    var betongreen = document.getElementById('green').value;
+    if(betongreen<money){
+        money = money - betongreen;
+        document.getElementById('money').innerHTML = money;
+        bettedongreen = betongreen*14
+        isbetted++
+    }
+    else{
+        document.getElementById('bet-status').innerHTML = 'Możesz dać beta tylko raz na ture!';
+    }
+}
+
+
 
 
 
@@ -77,8 +89,9 @@ start = () => {
             if(bettedongreen!=0){
                 money = money + bettedongreen;
                 document.getElementById('money').innerHTML = money;
-                bettedongreen = 0;
             }
+            bettedongreen = bettedonred = bettedonblack= 0;
+
         }
         else{
             if(winner<0.535&&winner>0.07){
@@ -91,8 +104,9 @@ start = () => {
                 if(bettedonred!=0){
                     money = money + bettedonred;
                     document.getElementById('money').innerHTML = money;
-                    bettedonred = 0;
                 }
+
+                bettedongreen = bettedonred = bettedonblack= 0;
 
             }
             else{
@@ -107,8 +121,9 @@ start = () => {
                     if(bettedonblack!=0){
                         money = money + bettedonblack;
                         document.getElementById('money').innerHTML = money;
-                        bettedonblack = 0;
                     }
+                    bettedongreen = bettedonred = bettedonblack= 0;
+
                 }
             }
         }
